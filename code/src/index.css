@@ -1,13 +1,201 @@
 body {
-  margin: 0;
+  margin: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(40,40,40);
+  background: linear-gradient(180deg, rgba(40,40,40,1) 0%, rgba(0,0,0,1) 5%);
+  color: #fafafa;
+  box-sizing: border-box;
+  line-height: 1.4;
+  margin-top: 100px;
+  margin-bottom: 200px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+main {
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.header-style {
+  font-size: 24px;
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.15);
+  padding-bottom: 8px;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.album-card {
+  width: 100%;
+  font-size: 16px;
+}
+
+.album-image {
+  width: 100%;
+}
+
+.album-text {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 4px;
+  margin-top: 8px;
+  display: block;
+  text-decoration: none;
+}
+
+.album-text:hover {
+  text-decoration: underline;
+}
+
+.artist-text {
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 3px;
+  display: inline;
+  text-decoration: none;
+}
+
+.spotifake-logo {
+  opacity: 0.30;
+  width: 180px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+/* Add a comma after each artist */
+.artist-text::after {
+  content: ", ";
+}
+
+/* Remove the comma after the last artist */
+.artist-text:last-child::after {
+  content: ""
+}
+
+.artist-text:hover {
+  text-decoration: underline;
+}
+
+.album-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  row-gap: 3rem;
+  padding-top: 32px;
+}
+
+.image-container {
+  position: relative;
+}
+
+.overlay {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+}
+
+.overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.button-container {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12% 0 12%;
+}
+
+.button-small {
+  width: 32px;
+  height: 32px;
+}
+
+.button-small:active {
+  opacity: 0.7;
+}
+
+.button-small:hover {
+  cursor: default;
+}
+
+.button-play {
+  border: 1px solid rgba(255,255,255,0.8);
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-play img {
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* DEN HÄR FÖRSTORAR PLAY-KNAPPEN */
+.button-play:hover {
+  /* transform: scale(1.05, 1.05); */
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgba(255,255,255,1);
+  background-color: rgba(0,0,0,0.6);
+  cursor: default;
+}
+
+.button-play:active {
+  /* transform: scale(1, 1); */
+  width: 62px;
+  height: 62px;
+  border: 1px solid rgba(255,255,255,0.8);
+  background-color: rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+
+
+@media (min-width: 500px) {
+  .album-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* max-width: 80%; */
+  }
+}
+
+@media (min-width: 700px) {
+  .album-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main {
+    /* max-width: 80%; */
+  }
+}
+
+@media (min-width: 1024px) {
+  .album-grid {
+    grid-template-columns: repeat(4, 1fr);
+    min-width: 100%;
+  }
+  main {
+    max-width: 1200px;
+  }
 }
