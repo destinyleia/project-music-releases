@@ -1,6 +1,6 @@
-# Music Releases
+# Music Releases  🎵
 
-The project was to create a music listing site, similar to the New Releases section on Spotify – but this week we were introduced to React.
+The project was to create a music listing site, similar to the New Releases section on Spotify – but this week we were introduced to React. 🎶
 
 ## View it live
 
